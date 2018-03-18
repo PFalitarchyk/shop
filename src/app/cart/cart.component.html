@@ -1,3 +1,9 @@
-<p>
-  cart works!
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">Cart</div>
+  <div class="panel-body">
+      <ul>
+          <li *ngFor="let product of products">{{product.name}}</li>
+      </ul>
+      <button class="btn btn-primary" (click)="onBuy()" >Buy</button>
+  </div>
+</div>

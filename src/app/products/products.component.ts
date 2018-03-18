@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CartService } from '../cart/cart.service';
 import { ProductsService } from './shared/products.service';
 import { Product } from './shared/product.model';
 
@@ -12,6 +13,7 @@ export class ProductsComponent implements OnInit {
   products: Product[];
 
   constructor(
+    public cartService: CartService,
     public productsService: ProductsService
   ) { }
 
@@ -20,6 +22,7 @@ export class ProductsComponent implements OnInit {
   }
 
   onBuy(product: Product): void {
+    this.cartService.addToCart(product);
     console.log(product);
   }
 }
