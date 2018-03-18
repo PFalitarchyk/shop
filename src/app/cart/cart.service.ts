@@ -15,4 +15,9 @@ export class CartService {
   addToCart(product: Product): void {
     this.products.push(product);
   }
+
+  buy(): void {
+    this.products.length = 0;
+  }
+
 }

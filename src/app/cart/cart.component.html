@@ -1,9 +1,12 @@
 <div class="panel panel-default">
   <div class="panel-heading">Cart</div>
   <div class="panel-body">
-      <ul>
-          <li *ngFor="let product of products">{{product.name}}</li>
-      </ul>
-      <button class="btn btn-primary" (click)="onBuy()" >Buy</button>
+      <div *ngIf="products.length > 0; else elseBlock">
+        <ul>
+            <li *ngFor="let product of products">{{product.name}}</li>
+        </ul>
+        <button class="btn btn-primary" (click)="onBuy()" >Buy</button>
+      </div>
+      <ng-template #elseBlock>Cart is empty</ng-template>
   </div>
 </div>

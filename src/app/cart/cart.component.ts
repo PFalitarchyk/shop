@@ -20,6 +20,7 @@ export class CartComponent implements OnInit {
 
   onBuy(): void {
     console.log(this.products);
+    this.cartService.buy();
   }
 
 }
