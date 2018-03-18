@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <div class="panel-heading">{{product.name}}</div>
+  <div class="panel-body">
+      <ul>
+          <li>Description: {{product.description}}</li>
+          <li>Price: ${{product.price}}</li>
+          <li>Available: {{product.isAvailable}}</li>
+      </ul>
+      <button class="btn btn-primary" (click)="onBuy()" >Buy</button>
+  </div>
+</div>
