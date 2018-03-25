@@ -2,7 +2,7 @@
   <div class="panel-heading">Cart</div>
   <div class="panel-body">
       <div *ngIf="cartItems.length > 0; else elseBlock">
-        <app-cart-list [cartItems]="cartItems" (remove)="onRemove($event)"></app-cart-list>
+        <app-cart-list #cartList [cartItems]="cartItems" (remove)="onRemove($event)"></app-cart-list>
         <div>Price: ${{getPrice()}}</div>
         <button class="btn btn-primary" (click)="onBuy()" >Buy</button>
       </div>

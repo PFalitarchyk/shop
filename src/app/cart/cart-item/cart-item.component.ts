@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Input, Output,
+  HostListener } from '@angular/core';
 
 import { CartItem } from '../../shared/cart/cart-item.model';
 
@@ -7,13 +8,30 @@ import { CartItem } from '../../shared/cart/cart-item.model';
   templateUrl: './cart-item.component.html',
   styleUrls: ['./cart-item.component.css']
 })
-export class CartItemComponent implements OnInit {
+export class CartItemComponent implements OnDestroy, OnInit {
   @Input() cartItem: CartItem;
   @Output() remove: EventEmitter<CartItem> = new EventEmitter();
+
+  className = '';
+
+  @HostListener('mouseenter', ['$event'])
+    enter(event: Event) {
+      this.className = 'active-item';
+    }
+
+  @HostListener('mouseleave', ['$event'])
+    leave(event: Event) {
+      this.className = '';
+    }
 
   constructor() { }
 
   ngOnInit() {
+    console.log('init CartItem');
+  }
+
+  ngOnDestroy() {
+    console.log('destroy CartItem');
   }
 
   onRemove(): void {

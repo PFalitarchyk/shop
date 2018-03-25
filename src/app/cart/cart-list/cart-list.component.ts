@@ -11,6 +11,8 @@ export class CartListComponent implements OnInit {
   @Input() cartItems: CartItem[];
   @Output() remove: EventEmitter<CartItem> = new EventEmitter();
 
+  testProp = 'cart-sist-string';
+
   constructor() { }
 
   ngOnInit() {
