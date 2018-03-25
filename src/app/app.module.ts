@@ -9,6 +9,12 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { ProductsComponent } from './products/products.component';
 import { ProductsService } from './products/shared/products.service';
 
+import { CartModule } from './cart/cart.module';
+import { ProductsModule } from './products/products.module';
+import { OrdersModule } from './orders/orders.module';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +24,12 @@ import { ProductsService } from './products/shared/products.service';
     ProductsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CartModule,
+    ProductsModule,
+    OrdersModule,
+    CoreModule,
+    SharedModule
   ],
   providers: [CartService, ProductsService],
   bootstrap: [AppComponent]
