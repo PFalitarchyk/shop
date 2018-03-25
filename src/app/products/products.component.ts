@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CartService } from '../cart/cart.service';
-import { ProductsService } from './shared/products.service';
-import { Product } from './shared/product.model';
+import { CartService } from '../shared/cart/cart.service';
+import { Product } from '../shared/products/product.model';
 
+import { ProductsService } from './shared/products.service';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',

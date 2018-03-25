@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+  <div class="panel-heading">{{cartItem.product.name}}</div>
+  <div class="panel-body">
+      <ul>
+          <li>Quantity: {{cartItem.quantity}}</li>
+          <li>Price: ${{cartItem.getPrice()}}</li>
+      </ul>
+      <button class="btn btn-primary" (click)="onRemove()">Remove</button>
+  </div>
+</div>

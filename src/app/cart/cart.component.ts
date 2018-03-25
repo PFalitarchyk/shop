@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CartService } from './cart.service';
-import { Product } from '../products/shared/product.model';
+import { CartService } from '../shared/cart/cart.service';
+import { CartItem } from '../shared/cart/cart-item.model';
 
 @Component({
   selector: 'app-cart',
@@ -9,18 +9,25 @@ import { Product } from '../products/shared/product.model';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  products: Product[];
+  cartItems: CartItem[];
 
   constructor(
     public cartService: CartService) { }
 
   ngOnInit() {
-    this.products = this.cartService.getProducts();
+    this.cartItems = this.cartService.getCartItems();
+  }
+
+  getPrice(): number {
+    return this.cartService.getPrice();
+  }
+
+  onRemove(cartItem: CartItem): void {
+    this.cartService.removeFromCart(cartItem);
   }
 
   onBuy(): void {
-    console.log(this.products);
+    console.log(this.cartItems);
     this.cartService.buy();
   }
-
 }

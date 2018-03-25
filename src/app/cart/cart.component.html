@@ -1,10 +1,9 @@
 <div class="panel panel-default">
   <div class="panel-heading">Cart</div>
   <div class="panel-body">
-      <div *ngIf="products.length > 0; else elseBlock">
-        <ul>
-            <li *ngFor="let product of products">{{product.name}}</li>
-        </ul>
+      <div *ngIf="cartItems.length > 0; else elseBlock">
+        <app-cart-list [cartItems]="cartItems" (remove)="onRemove($event)"></app-cart-list>
+        <div>Price: ${{getPrice()}}</div>
         <button class="btn btn-primary" (click)="onBuy()" >Buy</button>
       </div>
       <ng-template #elseBlock>Cart is empty</ng-template>
