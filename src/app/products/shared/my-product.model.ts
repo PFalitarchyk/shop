@@ -7,7 +7,7 @@ export class MyProduct implements Product {
     public description: string,
     public price: number,
     public category: ProductCategory,
-    public isAvailable: boolean,
-    public tags: string[]
+    public isAvailable: boolean = false,
+    public tags: string[] = []
   ) {}
 }

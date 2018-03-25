@@ -6,6 +6,6 @@
           <li>Price: ${{product.price}}</li>
           <li>Available: {{product.isAvailable}}</li>
       </ul>
-      <button class="btn btn-primary" (click)="onBuy()" >Buy</button>
+      <button class="btn btn-primary" (click)="onBuy()" [disabled]="!product.isAvailable">Buy</button>
   </div>
 </div>

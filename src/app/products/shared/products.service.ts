@@ -24,7 +24,7 @@ export class ProductsService {
         `15.6" 1920 x 1080 матовый, Intel Core i7 7700HQ 2800 МГц, 8 ГБ,
         1000 ГБ (HDD), NVIDIA GeForce GTX 1050, Windows 10, цвет крышки черный,
         цвет корпуса черный`
-        , 1000, ProductCategory.ComputersAndAccessories, true, ['Laptop', 'Lenovo']),
+        , 1000, ProductCategory.ComputersAndAccessories, false, ['Laptop', 'Lenovo']),
     ];
   }
 }
