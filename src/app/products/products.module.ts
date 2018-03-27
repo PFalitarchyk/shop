@@ -1,4 +1,4 @@
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ProductsComponent } from './products.component';
@@ -20,7 +20,6 @@ import { ProductsService } from './shared/products.service';
   ],
   providers: [
     ProductsService
-  ],
-  schemas: [NO_ERRORS_SCHEMA]
+  ]
 })
 export class ProductsModule { }

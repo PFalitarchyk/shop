@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Input, Output,
   HostListener } from '@angular/core';
 
-import { CartItem } from '../../shared/cart/cart-item.model';
+import { CartItem } from '../../core/cart/cart-item.model';
 
 @Component({
   selector: 'app-cart-item',
