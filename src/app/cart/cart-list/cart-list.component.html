@@ -1,5 +1,7 @@
 <app-cart-item
     *ngFor="let cartItem of cartItems"
     [cartItem]="cartItem"
-    (remove)="onRemove($event)">
+    (remove)="onRemove($event)"
+    (increaseItemsQuantity)="onIncreaseItemsQuantity($event)"
+    (decreaseItemsQuantity)="onDecreaseItemsQuantity($event)">
 </app-cart-item>

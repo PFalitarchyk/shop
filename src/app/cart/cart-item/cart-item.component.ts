@@ -11,6 +11,8 @@ import { CartItem } from '../../core/cart/cart-item.model';
 export class CartItemComponent implements OnDestroy, OnInit {
   @Input() cartItem: CartItem;
   @Output() remove: EventEmitter<CartItem> = new EventEmitter();
+  @Output() increaseItemsQuantity: EventEmitter<CartItem> = new EventEmitter();
+  @Output() decreaseItemsQuantity: EventEmitter<CartItem> = new EventEmitter();
 
   className = '';
 
@@ -36,5 +38,13 @@ export class CartItemComponent implements OnDestroy, OnInit {
 
   onRemove(): void {
     this.remove.emit(this.cartItem);
+  }
+
+  onIncreaseItemsQuantity(): void {
+    this.increaseItemsQuantity.emit(this.cartItem);
+  }
+
+  onDecreaseItemsQuantity(): void {
+    this.decreaseItemsQuantity.emit(this.cartItem);
   }
 }

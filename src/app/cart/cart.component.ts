@@ -36,6 +36,14 @@ export class CartComponent implements OnInit {
     console.log(this.child2.testProp);
   }
 
+  onIncreaseItemsQuantity(cartItem: CartItem): void {
+    this.cartService.increaseItemsQuantity(cartItem);
+  }
+
+  onDecreaseItemsQuantity(cartItem: CartItem): void {
+    this.cartService.decreaseItemsQuantity(cartItem);
+  }
+
   onBuy(): void {
     console.log(this.cartItems);
     this.cartService.buy();

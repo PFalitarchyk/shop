@@ -5,6 +5,8 @@
           <li>Quantity: {{cartItem.quantity}}</li>
           <li>Price: ${{cartItem.getPrice()}}</li>
       </ul>
+      <button class="btn btn-primary" (click)="onIncreaseItemsQuantity()">+</button>
+      <button class="btn btn-primary" (click)="onDecreaseItemsQuantity()">-</button>
       <button class="btn btn-primary" (click)="onRemove()">Remove</button>
   </div>
 </div>

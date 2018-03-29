@@ -26,22 +26,29 @@ export class CartService {
     return quantity;
   }
 
-  addToCart(product: Product): void {
+  addToCart(product: Product, quantity: number = 1): void {
     let cartItem = this.cartItems.find(r => r.product.id === product.id);
     if (cartItem) {
-      cartItem.quantity += 1;
+      cartItem.quantity += quantity;
     } else {
       cartItem = new CartItem(product);
       this.cartItems.push(cartItem);
     }
-
   }
 
   removeFromCart(cartItem: CartItem): void {
+      this.cartItems.splice(this.cartItems.indexOf(cartItem), 1);
+  }
+
+  decreaseItemsQuantity(cartItem: CartItem): void {
     cartItem.quantity -= 1;
     if (cartItem.quantity < 1) {
-      this.cartItems.splice(this.cartItems.indexOf(cartItem), 1);
+      this.removeFromCart(cartItem);
     }
+  }
+
+  increaseItemsQuantity(cartItem: CartItem): void {
+    cartItem.quantity += 1;
   }
 
   buy(): void {

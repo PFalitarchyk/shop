@@ -10,6 +10,8 @@ import { CartItem } from '../../core/cart/cart-item.model';
 export class CartListComponent implements OnInit {
   @Input() cartItems: CartItem[];
   @Output() remove: EventEmitter<CartItem> = new EventEmitter();
+  @Output() increaseItemsQuantity: EventEmitter<CartItem> = new EventEmitter();
+  @Output() decreaseItemsQuantity: EventEmitter<CartItem> = new EventEmitter();
 
   testProp = 'cart-sist-string';
 
@@ -20,5 +22,13 @@ export class CartListComponent implements OnInit {
 
   onRemove(cartItem: CartItem): void {
     this.remove.emit(cartItem);
+  }
+
+  onIncreaseItemsQuantity(cartItem: CartItem): void {
+    this.increaseItemsQuantity.emit(cartItem);
+  }
+
+  onDecreaseItemsQuantity(cartItem: CartItem): void {
+    this.decreaseItemsQuantity.emit(cartItem);
   }
 }
