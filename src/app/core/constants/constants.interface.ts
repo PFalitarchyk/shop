@@ -1,6 +1,6 @@
 import { InjectionToken } from '@angular/core';
 
-export let IConstantsService = new InjectionToken<IConstantsService>('IConstantsService');
+export let IConstantsServiceToken = new InjectionToken<IConstantsService>('IConstantsService');
 
 export interface IConstantsService {
     App: string;

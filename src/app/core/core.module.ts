@@ -6,7 +6,7 @@ import { CartService } from './cart/cart.service';
 import { LocalStorageService } from './local-storage/local-storage.service';
 import { ConfigOptionsService } from './config-options/config-options.service';
 import { ConstantsService } from './constants/constants.service';
-import { IConstantsService } from './constants/constants.interface';
+import { IConstantsServiceToken } from './constants/constants.interface';
 import { GeneratorService } from './generator/generator.service';
 import { GeneratorServiceFactory } from './generator/generator.factory';
 
@@ -18,8 +18,8 @@ import { GeneratorServiceFactory } from './generator/generator.factory';
     CartService,
     LocalStorageService,
     ConfigOptionsService,
-    { provide: IConstantsService, useValue: ConstantsService },
-    { provide: GeneratorService, useFactory: GeneratorServiceFactory, deps: [5] }
+    { provide: IConstantsServiceToken, useValue: ConstantsService },
+    { provide: GeneratorService, useFactory: GeneratorServiceFactory(5)}
   ],
   declarations: []
 })
