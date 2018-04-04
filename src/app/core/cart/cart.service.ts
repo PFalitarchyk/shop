@@ -16,7 +16,7 @@ export class CartService {
 
   getPrice(): number {
     let price = 0;
-    this.cartItems.forEach(r => price += r.getPrice());
+    this.cartItems.forEach(r => price += r.getCost());
     return price;
   }
 

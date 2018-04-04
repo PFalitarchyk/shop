@@ -3,7 +3,7 @@
   <div class="panel-body">
       <ul>
           <li>Quantity: {{cartItem.quantity}}</li>
-          <li>Price: ${{cartItem.getPrice()}}</li>
+          <li>Cost: ${{cartItem.getCost()}}</li>
       </ul>
       <button class="btn btn-primary" (click)="onIncreaseItemsQuantity()">+</button>
       <button class="btn btn-primary" (click)="onDecreaseItemsQuantity()">-</button>
