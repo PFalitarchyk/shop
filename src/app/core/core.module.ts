@@ -19,7 +19,7 @@ import { GeneratorServiceFactory } from './generator/generator.factory';
     LocalStorageService,
     ConfigOptionsService,
     { provide: IConstantsServiceToken, useValue: ConstantsService },
-    { provide: GeneratorService, useFactory: GeneratorServiceFactory(5)}
+    { provide: GeneratorService, useFactory: GeneratorServiceFactory, deps: [IConstantsServiceToken]}
   ],
   declarations: []
 })

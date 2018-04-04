@@ -5,4 +5,5 @@ export let IConstantsServiceToken = new InjectionToken<IConstantsService>('ICons
 export interface IConstantsService {
     App: string;
     Ver: string;
+    StringLength: number;
 }
