@@ -1,5 +1,5 @@
 export enum ProductCategory {
-  Electronics = 0 as number,
-  Appliances = 1 as number,
-  ComputersAndAccessories = 3 as number
+  Electronics = 'Electronics' as any,
+  Appliances = 'Appliances'  as any,
+  ComputersAndAccessories = 'Computers & Accessories' as any
 }

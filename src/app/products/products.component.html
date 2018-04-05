@@ -1,2 +1,2 @@
 <h3>Products: </h3>
-<app-product-list [products]="products" (buy)="onBuy($event)"> </app-product-list>
+<app-product-list [products]="products | async" (buy)="onBuy($event)"> </app-product-list>

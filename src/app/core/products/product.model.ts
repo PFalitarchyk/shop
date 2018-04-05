@@ -8,4 +8,5 @@ export interface Product {
     category: ProductCategory;
     isAvailable: boolean;
     tags: string[];
+    date: Date;
   }

@@ -14,7 +14,8 @@ export class CartListComponent implements OnInit {
   @Output() decreaseItemsQuantity: EventEmitter<CartItem> = new EventEmitter();
 
   testProp = 'cart-sist-string';
-
+  orderBy = 'quantity';
+  order = true;
   constructor() { }
 
   ngOnInit() {

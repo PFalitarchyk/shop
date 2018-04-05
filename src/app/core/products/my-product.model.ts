@@ -9,6 +9,7 @@ export class MyProduct implements Product {
     public price: number,
     public category: ProductCategory,
     public isAvailable: boolean = false,
-    public tags: string[] = []
+    public tags: string[] = [],
+    public date: Date = new Date(Date.now())
   ) {}
 }

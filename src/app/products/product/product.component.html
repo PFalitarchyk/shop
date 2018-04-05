@@ -2,9 +2,11 @@
   <div class="panel-heading">{{product.name}}</div>
   <div class="panel-body">
       <ul>
+          <li>Category: {{product.category | uppercase}}</li>
           <li>Description: {{product.description}}</li>
-          <li>Price: ${{product.price}}</li>
+          <li>Price: {{product.price | currency:'USD':'symbol' }}</li>
           <li>Available: {{product.isAvailable}}</li>
+          <li>Date: {{product.date | date:'fullDate'}}</li>
       </ul>
       <button class="btn btn-primary" (click)="onBuy()" [disabled]="!product.isAvailable">Buy</button>
   </div>

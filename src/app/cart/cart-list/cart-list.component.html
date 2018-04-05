@@ -1,5 +1,27 @@
+Order By:<br/>
+<label>
+    <input type="radio" name="orderBy" [(ngModel)]="orderBy" value="quantity">
+    Quantity
+  </label><br/>
+  <label>
+    <input type="radio" name="orderBy" [(ngModel)]="orderBy" value="name">
+    Name
+  </label><br/>
+  <label>
+    <input type="radio" name="orderBy" [(ngModel)]="orderBy" value="cost">
+    Cost
+  </label><br/>
+Order:<br/>
+  <label>
+      <input type="radio" name="order" [(ngModel)]="order" [value]="true">
+      Asc
+    </label><br/>
+    <label>
+      <input type="radio" name="order" [(ngModel)]="order" [value]="false">
+      Desc
+    </label><br/>
 <app-cart-item
-    *ngFor="let cartItem of cartItems"
+    *ngFor="let cartItem of (cartItems | orderBy:orderBy:order)"
     [cartItem]="cartItem"
     (remove)="onRemove($event)"
     (increaseItemsQuantity)="onIncreaseItemsQuantity($event)"

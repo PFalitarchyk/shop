@@ -11,7 +11,7 @@ import { ProductsService } from './shared/products.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  products: Product[];
+  products: Promise<Product[]>;
 
   constructor(
     public cartService: CartService,
@@ -19,7 +19,7 @@ export class ProductsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.products = this.productsService.getProducts();
+    this.products = this.productsService.getProductsAsync();
   }
 
   onBuy(product: Product): void {
